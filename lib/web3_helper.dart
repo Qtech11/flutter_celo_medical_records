@@ -12,78 +12,12 @@ class Web3Helper {
         Web3Client('https://alfajores-forno.celo-testnet.org', httpClient);
   }
 
-  final EthereumAddress _contractAddress =
-      EthereumAddress.fromHex('0x540C0eB1D15dCa34346eCDF4D9935383B080509b');
+  final _contractAddress = EthereumAddress.fromHex('<your-contract-address>');
   final credentials = EthPrivateKey.fromHex(
-      '88093061c7ffd4701cd6c37532868e34043ad3f57ab3f2c08e1d290401b2a7b4');
+      "<your-private-key>"); // replace with your celo wallet private key
 
-  static const abi = [
-    {
-      "inputs": [
-        {"internalType": "string", "name": "patientID", "type": "string"},
-        {"internalType": "string", "name": "knownAllergies", "type": "string"},
-        {
-          "internalType": "string",
-          "name": "medicalConditions",
-          "type": "string"
-        }
-      ],
-      "name": "addAdditionalRecord",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {"internalType": "string", "name": "patientID", "type": "string"},
-        {"internalType": "string", "name": "patientName", "type": "string"},
-        {"internalType": "string", "name": "DOB", "type": "string"},
-        {"internalType": "string", "name": "bloodType", "type": "string"}
-      ],
-      "name": "addRecord",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {"inputs": [], "stateMutability": "nonpayable", "type": "constructor"},
-    {
-      "inputs": [
-        {"internalType": "string", "name": "patientID", "type": "string"}
-      ],
-      "name": "getRecords",
-      "outputs": [
-        {
-          "components": [
-            {"internalType": "string", "name": "patientName", "type": "string"},
-            {"internalType": "string", "name": "DOB", "type": "string"},
-            {"internalType": "string", "name": "bloodType", "type": "string"}
-          ],
-          "internalType": "struct MedicalRecords.Record",
-          "name": "",
-          "type": "tuple"
-        },
-        {
-          "components": [
-            {
-              "internalType": "string",
-              "name": "knownAllergies",
-              "type": "string"
-            },
-            {
-              "internalType": "string",
-              "name": "medicalConditions",
-              "type": "string"
-            }
-          ],
-          "internalType": "struct MedicalRecords.AdditionalRecord",
-          "name": "",
-          "type": "tuple"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    }
-  ];
+  static const abi =
+      '<your-contract-abi>'; // Replace these with your actual contract ABI
 
 // Replace these with your actual contract ABI
 
